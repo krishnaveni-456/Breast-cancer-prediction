@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 50px;
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px;
+        }
+        .no-cancer { color: green; }
+        .cancer { color: red; }
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        a { text-decoration: none; color: #00bcd4; font-size: 18px; display: inline-block; margin-top: 20px; }
+        .plots a { display: block; margin: 10px; font-size: 18px; color: #00bcd4; }
+        .back-link { margin-top: 20px; display: inline-block; font-size: 18px; color: #ff5722; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+
+    <!-- Prediction Text -->
+    <p class="result {% if 'No' in prediction_text %}no-cancer{% else %}cancer{% endif %}">
+        {{ prediction_text }}
+    </p>
+
+    <!-- Uploaded Image -->
+    {% if uploaded_image %}
+        <div>
+            <h3>Uploaded Image:</h3>
+            <img src="{{ uploaded_image }}" alt="Uploaded Image">
+        </div>
+    {% endif %}
+
+    <hr>
+
+    <!-- Accuracy & Loss Visualization Links -->
+    <div class="plots">
+        <h2>Model Performance</h2>
+        <a href="{{ url_for('accuracy_plot') }}" target="_blank">📈 View Accuracy Plot</a>
+        <a href="{{ url_for('loss_plot') }}" target="_blank">📉 View Loss Plot</a>
+    </div>
+
+    <!-- Navigation Links -->
+    <a href="{{ url_for('cancer_index') }}">Try Another Image</a> |
+    <a href="{{ url_for('dashboard') }}" class="back-link">⬅ Back to Dashboard</a>
+</body>
+</html>

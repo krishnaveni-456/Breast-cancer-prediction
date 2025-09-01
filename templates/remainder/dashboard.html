@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container glass-card">
+    <h2 class="page-title">👋 Welcome, {{ current_user.email }}</h2>
+
+    <!-- Top Button to Add Appointment -->
+    <div class="top-actions">
+        <a href="{{ url_for('add_appointment') }}" class="btn-primary">➕ Add Appointment</a>
+    </div>
+
+    <h3 class="section-heading">📋 Your Appointments</h3>
+
+    {% if appointments %}
+        <!-- Appointments exist, but don't display them -->
+        <p class="no-data-text">✅ Appointments have been added.</p>
+    {% else %}
+        <div class="no-appointments">
+            <img src="{{ url_for('static', filename='empty.png') }}" alt="No Appointments" class="empty-image">
+            <p class="no-data-text">No appointments found.</p>
+        </div>
+    {% endif %}
+
+    <!-- Logout -->
+    <div class="logout-action">
+        <a href="{{ url_for('logout') }}" class="btn-logout">🚪 Logout</a>
+    </div>
+</div>
+{% endblock %}

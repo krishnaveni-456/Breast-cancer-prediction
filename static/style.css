@@ -1,0 +1,153 @@
+/* ===== General Page Styling ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+/* ===== Navbar ===== */
+nav {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .brand {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav a {
+    color: #ddd;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00c8ff;
+}
+
+nav .logout {
+    color: red;
+    font-weight: bold;
+}
+
+/* ===== Center Container (for forms) ===== */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* ===== Card Style (Login/Register/Add Appointment) ===== */
+.glass-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 380px;
+    max-width: 90%;
+}
+
+.page-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #222;
+    text-align: center;
+}
+
+/* ===== Form Styles ===== */
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #00c8ff;
+}
+
+/* ===== Buttons ===== */
+.button {
+    background: #00c8ff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.button:hover {
+    background: #009fd4;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* ===== Links ===== */
+a {
+    color: #00c8ff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Dashboard Tables ===== */
+.dashboard-container {
+    padding: 30px;
+}
+
+.dashboard-container h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}

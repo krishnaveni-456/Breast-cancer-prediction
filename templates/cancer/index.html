@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 50px;
+        }
+        h1 { color: #333; }
+        form { margin-top: 30px; }
+        input[type="file"] { margin-bottom: 20px; }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover { background-color: #0097a7; }
+        .plots a { display: block; margin: 10px; font-size: 18px; color: #00bcd4; }
+        .back-link { margin-top: 20px; display: inline-block; font-size: 18px; color: #ff5722; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Breast Cancer Prediction</h1>
+    <p>Upload a single image for prediction</p>
+
+    <form action="{{ url_for('cancer_index') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br>
+        <input type="submit" value="Predict">
+    </form>
+
+    <hr>
+
+    <!-- Accuracy & Loss Visualization Links -->
+    <div class="plots">
+        <h2>Model Performance</h2>
+        <a href="{{ url_for('accuracy_plot') }}" target="_blank">📈 View Accuracy Plot</a>
+        <a href="{{ url_for('loss_plot') }}" target="_blank">📉 View Loss Plot</a>
+    </div>
+
+    <!-- Back to Dashboard -->
+    <a href="{{ url_for('dashboard') }}" class="back-link">⬅ Back to Dashboard</a>
+</body>
+</html>
